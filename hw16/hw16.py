@@ -4,26 +4,22 @@
 # Необязательное
 # Также класс должен считать количество подсчетов температуры и возвращать это значение с помощью статического метода.
 
-cel = int(input("Введите градусі в цельсиях: "))
-far = int(input("Введите градусі в фаренгейтах: "))
+cel = float(input("Введите градусі в цельсиях: "))
+far = float(input("Введите градусі в фаренгейтах: "))
 
 class Temperature:
-    def __init__(self, celcii, farengeit):
-        self.celcii = celcii
-        self.farengeit = farengeit
-
     @staticmethod
-    def Celcii():
+    def Celcii(Farengeit):
         celcii = cel
         return celcii * 9 / 5 + 32
 
     @staticmethod
-    def Farengeit():
+    def Farengeit(Celcii):
         farengeit = far
         return (farengeit - 32) * 5 / 9
 
-t = Temperature(cel,far)
-tem = t.Celcii()
-tem1 = t.Farengeit()
-print(tem)
-print(tem1)
+t = Temperature()
+tem = t.Celcii(cel)
+tem1 = t.Farengeit(far)
+print(f"Температура в Фаренгейтах {tem}")
+print(f"Температура в Цельсиях {tem1}")
